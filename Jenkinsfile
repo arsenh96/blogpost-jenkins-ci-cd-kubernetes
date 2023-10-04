@@ -26,9 +26,9 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy Placeholder') {
             steps {
-                bat '.\\deploy.ps1' // Aanpassen aan jouw scriptnaam en locatie
+                echo 'Deploy stap komt hier later.'
             }
         }
     }
