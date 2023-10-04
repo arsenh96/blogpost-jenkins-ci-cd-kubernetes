@@ -77,7 +77,6 @@ De eerste stap is het installeren van Jenkins. Download het installatiebestand v
 **Stap 2, Basisconfiguratie:** installatie, open een webbrowser en ga naar `http://localhost:8080` om de configuratiewizard van Jenkins te starten. Nu heb je als het goed is toegang tot het plugin-beheerscherm. Installeer de aanbevolen plugins.
 **Stap 3, Maak je eerste gebruiker aan:** Maak een admin-gebruiker aan. Dit zal de eerste gebruiker zijn die volledige toegang tot Jenkins heeft.
 **Stap 4, URL Instellen:** Stel de URL in waar Jenkins bereikbaar is. Dit is belangrijk voor diverse integraties en webhooks.
-
 ## 5.2. Kubernetes opzetten met Docker Desktop
 Kubernetes is het orkestratieplatform dat we gaan gebruiken. We maken het onszelf makkelijk door Kubernetes in te schakelen via Docker Desktop.
 ### 5.2.1. Docker Desktop installeren
@@ -88,6 +87,12 @@ Ga naar de Docker Desktop instellingen en schakel Kubernetes in.
 Gebruik de command line om te controleren of Kubernetes correct is geïnstalleerd. Dit kan gedaan worden met de command `kubectl cluster-info`.
 ### 5.2.3. Integratie met Jenkins
 In een later hoofdstuk gaan we dieper in op de integratie tussen Jenkins en Kubernetes.
+# 6. Creëren van een Jenkinsfile
+In dit hoofdstuk zullen we een Jenkinsfile maken, de kern van onze CI/CD-pipeline die Jenkins automatisch zal oppikken wanneer we nieuwe code naar Git pushen.
+## 6.1. Jenkins en Git integratie
+Allereerst moeten we een webhook instellen in onze Git-repository die Jenkins informeert bij elke nieuwe push naar de repository.
+
+**Stap 1:** Ga naar je Git-repository en navigeer naar de webhook-instellingen. **Stap 2:** Voeg een nieuwe webhook toe en vul de Jenkins-URL in.
 # Bronnenlijst
 
 Anastasov, M.. (2023, 10, 4). Continuous Integration (CI) Explained. Semaphore. Geraadpleegd op 2023-10-05. URL: https://semaphoreci.com/continuous-integration
