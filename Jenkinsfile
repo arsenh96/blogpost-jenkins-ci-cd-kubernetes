@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'wsl nohup ./run-tests.sh &'
+                bat(script: 'run-tests.sh', returnStatus: true)
             }
         }
         stage('Docker Build and Push') {
