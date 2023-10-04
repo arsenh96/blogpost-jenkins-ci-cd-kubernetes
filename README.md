@@ -92,7 +92,62 @@ In dit hoofdstuk zullen we een Jenkinsfile maken, de kern van onze CI/CD-pipelin
 ## 6.1. Jenkins en Git integratie
 Allereerst moeten we een webhook instellen in onze Git-repository die Jenkins informeert bij elke nieuwe push naar de repository.
 
-**Stap 1:** Ga naar je Git-repository en navigeer naar de webhook-instellingen. **Stap 2:** Voeg een nieuwe webhook toe en vul de Jenkins-URL in.
+**Stap 1:** Ga naar je Git-repository en navigeer naar de webhook-instellingen. 
+**Stap 2:** Voeg een nieuwe webhook toe en vul de Jenkins-URL in.
+## 6.2. Jenkinsfile Basisstructuur
+We beginnen met het definiëren van de basisstructuur van onze Jenkinsfile.
+```
+pipeline {
+    agent any 
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+    }
+}
+```
+## 6.3. Testen
+In deze fase zal Jenkins automatisch de code testen.
+```
+stage('Test') {
+	steps {
+		sh './run-tests.sh'
+	}
+}
+```
+## 6.4. Docker Build en Push
+Na het testen gaan we een Docker image bouwen en pushen naar Docker Hub.
+```
+stage('Docker Build and Push') {
+	steps {
+		sh '''
+			docker build -t myapp .
+			docker push myapp:latest
+		'''
+	}
+}
+```
+## 6.5. Kubernetes Cluster Starten
+Nu komt het gedeelte waar we een nieuw Kubernetes-cluster starten met behulp van kubectl.
+```        
+stage('Kubernetes Deployment') {
+	steps {
+		sh 'kubectl create -f myapp-deployment.yaml'
+	}
+}
+```
+## 6.6. Docker Image Pull in Kubernetes
+Tot slot zal Kubernetes de Docker image van Docker Hub halen en de applicatie uitrollen.
+```
+		stage('Verify Deployment') {
+            steps {
+                sh 'kubectl get deployments'
+            }
+        }
+        
+```
 # Bronnenlijst
 
 Anastasov, M.. (2023, 10, 4). Continuous Integration (CI) Explained. Semaphore. Geraadpleegd op 2023-10-05. URL: https://semaphoreci.com/continuous-integration
