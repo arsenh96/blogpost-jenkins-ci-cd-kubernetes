@@ -141,12 +141,11 @@ stage('Kubernetes Deployment') {
 ## 6.6. Docker Image Pull in Kubernetes
 Tot slot zal Kubernetes de Docker image van Docker Hub halen en de applicatie uitrollen.
 ```
-		stage('Verify Deployment') {
-            steps {
-                sh 'kubectl get deployments'
-            }
-        }
-        
+stage('Verify Deployment') {
+	steps {
+		sh 'kubectl get deployments'
+	}
+}  
 ```
 # Bronnenlijst
 

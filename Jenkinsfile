@@ -8,27 +8,30 @@ pipeline {
             }
         }
         
-        stage('Restore') {
-            steps {
-                bat 'dotnet restore'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                bat 'dotnet build --configuration Release'
-            }
-        }
-        
         stage('Test') {
             steps {
-                bat 'dotnet test'
+                sh './run-tests.sh'
             }
         }
 
-        stage('Deploy Placeholder') {
+        stage('Docker Build and Push') {
             steps {
-                echo 'Deploy stap komt hier later.'
+                sh '''
+                    docker build -t myapp .
+                    docker push myapp:latest
+                '''
+            }
+        }
+
+        stage('Kubernetes Deployment') {
+            steps {
+                sh 'kubectl create -f myapp-deployment.yaml'
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh 'kubectl get deployments'
             }
         }
     }
