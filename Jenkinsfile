@@ -13,10 +13,12 @@ pipeline {
         }
         stage('Docker Build and Push') {
             steps {
-                sh '''
-                    docker build -t arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes .
-                    docker push arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes:latest
-                '''
+                dir('C:/src/minor_devops/blogpost-jenkins-ci-cd-kubernetes/HelloWorldWebApp') {
+                    sh '''
+                        docker build -t arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes -f Dockerfile .
+                        docker push arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes:latest
+                    '''
+                }
             }
         }
         /*
