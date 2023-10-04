@@ -148,6 +148,7 @@
   },
   "active": "0751f5bd2579c59e",
   "lastOpenFiles": [
+    "blogpost-jenkins-ci-cd-kubernetes - Shortcut.lnk",
     "ngrok-v3-stable-windows-amd64/ngrok.exe",
     "ngrok-v3-stable-windows-amd64",
     "images/ngrok-v3-stable-windows-amd64/ngrok.exe",
@@ -158,7 +159,6 @@
     "New Text Document.txt",
     "HelloWorldWebApp.Tests/HelloWorldControllerTests.cs",
     "HelloWorldWebApp/HelloWorldController.cs",
-    "HelloWorldWebApp/obj/Debug/net7.0/HelloWorldWebApp.csproj.AssemblyReference.cache",
     "README.md",
     "images/jenkins-kubernetes.jpg",
     "images/jenkins-workflow.jpg",
