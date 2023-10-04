@@ -12,18 +12,20 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat(script: 'run-tests.sh', returnStatus: true)
+                dir('HelloWorldWebApp.Tests') { // Navigeer naar de submap
+                    bat 'dotnet test' // Voer de tests uit
+                }
             }
         }
-        stage('Docker Build and Push') {
-            steps {
-                sh '''
-                    echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
-                    docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes -f HelloWorldWebApp/Dockerfile .
-                    docker push $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes:latest
-                '''
-            }
-        }
+        // stage('Docker Build and Push') {
+        //     steps {
+        //         sh '''
+        //             echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
+        //             docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes -f HelloWorldWebApp/Dockerfile .
+        //             docker push $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes:latest
+        //         '''
+        //     }
+        // }
         /*
         stage('Kubernetes Deployment') {
             steps {
