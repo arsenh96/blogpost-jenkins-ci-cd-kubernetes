@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "78c00caa069793a2",
+        "id": "6f3599c9399342a3",
         "type": "tabs",
         "children": [
           {
-            "id": "8dc4b7af0aace203",
+            "id": "0751f5bd2579c59e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,23 +146,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8dc4b7af0aace203",
+  "active": "0751f5bd2579c59e",
   "lastOpenFiles": [
-    "images/jdk-17.0.8_windows-x64_bin.exe",
-    "images/Unconfirmed 457725.crdownload",
-    "images/jdk-21_windows-x64_bin.exe",
-    "images/Unconfirmed 115627.crdownload",
-    "images/jre-8u381-windows-x64.exe",
-    "images/Unconfirmed 958127.crdownload",
-    "images/jenkins.msi",
-    "images/Unconfirmed 148816.crdownload",
+    "New Text Document.txt",
+    "HelloWorldWebApp.Tests/HelloWorldControllerTests.cs",
+    "HelloWorldWebApp/HelloWorldController.cs",
+    "HelloWorldWebApp/obj/Debug/net7.0/HelloWorldWebApp.csproj.AssemblyReference.cache",
+    "README.md",
+    "HelloWorldWebApp.Tests/obj/Debug/net7.0/HelloWorldWebApp.Tests.csproj.CopyComplete",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/HelloWorldWebApp.dll",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/HelloWorldWebApp.pdb",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
+    "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll",
     "images/jenkins-kubernetes.jpg",
-    "images/jenkins-kubernetes.jpg.crdownload",
-    "images/github-mark.zip",
-    "images/Unconfirmed 788377.crdownload",
     "images/jenkins-workflow.jpg",
     "mona-lisa.jpg.md",
-    "README.md",
     "images/ci-and-delivery-pipeline.jpg",
     "images/ci-figure.jpg"
   ]

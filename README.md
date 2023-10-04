@@ -25,7 +25,7 @@ Continuous Deployment (CD) bouwt voort op CI en gaat over het automatisch uitrol
 ![CI-and-Delivery-pipeline](ci-and-delivery-pipeline.jpg)
 _Figuur 2: CD-Workflow_
 
-Door CI en CD te combineren in een CI/CD-pipeline, kunnen ontwikkelteams een gestroomlijnd proces creëren voor het snel en betrouwbaar leveren van software, van ontwikkeling tot productie. Voor verdere inzichten in dit onderwerp, raden we aan de blogpost 'Continuous Integration (CI) Explained' van Semaphore (geschreven door Marko Anastasov) te lezen. Semaphore wordt veel gebruikt, zelfs door bekende bedrijven zoals Google en Microsoft.
+Door CI en CD te combineren in een CI/CD-pipeline, kunnen ontwikkelteams een gestroomlijnd proces creëren voor het snel en betrouwbaar leveren van software, van ontwikkeling tot productie. Voor verdere inzichten in dit onderwerp, raden we aan de blogpost 'Continuous Integration (CI) Explained' van Semaphore (geschreven door Marko Anastasov APA DOEN!!!) te lezen. Semaphore wordt veel gebruikt, zelfs door bekende bedrijven zoals Google en Microsoft.
 
 # 3. Introductie tot Jenkins
 Jenkins is een open-source automation server die een cruciale rol speelt in de realisatie van Continuous Integration (CI) en Continuous Deployment (CD) in moderne softwareontwikkelingsprocessen. In dit hoofdstuk verkennen we de kernaspecten van Jenkins en waarom het een voorkeurstool is voor CI/CD.
@@ -35,11 +35,11 @@ Jenkins is een open-source automation server die een cruciale rol speelt in de r
 - **Plugin Architectuur**: Dankzij een uitgebreide reeks plugins kan Jenkins op maat worden gemaakt om aan diverse projectbehoeften te voldoen.
 - **Monitoring en Feedback**: Het biedt voortdurende monitoring van projecten en geeft real-time feedback, wat helpt bij het vroegtijdig identificeren en oplossen van problemen.
 
-**Voor- en nadelen (Zie tabel 1):**
+**Voor- en nadelen:**
 
 | Voordeel | Nadeel |
 |---|---|
-| **Automatisering** | Kan complex zijn in te stellen |
+| **Automatisering**: Jenkins biedt een geautomatiseerde aanpak voor het bouwen, testen en deployen van code, wat essentieel is voor het versnellen van de ontwikkelingscycli. | Kan complex zijn in te stellen |
 | **Plugin-architectuur** | Kan leiden tot een onoverzichtelijke configuratie |
 | **Monitoring en feedback** | Kan resource-intensief zijn |
 | **Integratie met andere tools** | Kan complex zijn |
@@ -50,7 +50,6 @@ Jenkins haalt de broncode op uit een version control system zoals Git, voert bui
 _Figuur 3: Jenkins workflow_
 ## 3.3. Integratie met Andere tools
 Jenkins integreert naadloos met andere tools in het CI/CD-ecosysteem zoals Git voor version control en Kubernetes voor container orchestration, waardoor het een centrale spil vormt in de automatisering van software delivery processen.
-
 
 # 4. Jenkins en Kubernetes: Een Perfecte Match
 Jenkins en Kubernetes zijn krachtige tools die, wanneer gecombineerd, een robuuste en efficiënte CI/CD-pipeline kunnen creëren. De synergie tussen Jenkins' automatiseringsvermogen en Kubernetes' containerorkestratie maakt een gestroomlijnde workflow mogelijk voor het bouwen, testen en uitrollen van applicaties.
@@ -68,8 +67,6 @@ De samensmelting van Jenkins en Kubernetes biedt vele voordelen:
 - **Betrouwbaarheid**: De veerkrachtige aard van Kubernetes zorgt voor een hoge beschikbaarheid en failover-capaciteiten, wat cruciaal is voor CI/CD-pipelines.
 
 De volgende sectie zal dieper ingaan op het opzetten van een omgeving om deze geïntegreerde CI/CD-pipeline te faciliteren.
-
-
 # 5. Omgeving opzetten
 Dit hoofdstuk richt zich op het opzetten van de ontwikkelomgeving met behulp van twee belangrijke tools: Jenkins voor automatisering en Kubernetes voor containerorkestratie.
 
