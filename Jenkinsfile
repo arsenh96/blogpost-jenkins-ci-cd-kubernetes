@@ -11,8 +11,6 @@ pipeline {
                 sh 'wsl nohup ./run-tests.sh &'
             }
         }
-        // Commentaar voor nu om te focussen op het testen
-        /*
         stage('Docker Build and Push') {
             steps {
                 sh '''
@@ -21,6 +19,7 @@ pipeline {
                 '''
             }
         }
+        /*
         stage('Kubernetes Deployment') {
             steps {
                 sh 'kubectl create -f myapp-deployment.yaml'
