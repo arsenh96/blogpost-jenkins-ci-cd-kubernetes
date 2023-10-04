@@ -9,8 +9,10 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'wsl nohup ./run-tests.sh &'
-                }
             }
+        }
+        // Commentaar voor nu om te focussen op het testen
+        /*
         stage('Docker Build and Push') {
             steps {
                 sh '''
@@ -29,5 +31,6 @@ pipeline {
                 sh 'kubectl get deployments'
             }
         }
+        */
     }
 }
