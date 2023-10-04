@@ -8,9 +8,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './run-tests.sh'
+                sh 'wsl nohup ./run-tests.sh &'
+                }
             }
-        }
         stage('Docker Build and Push') {
             steps {
                 sh '''
