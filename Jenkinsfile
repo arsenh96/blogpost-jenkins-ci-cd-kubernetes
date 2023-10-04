@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKER_HUB_TOKEN = 'dckr_pat_YwY2kqTtSEAxG2Eo6McVYL03VnM'
         DOCKER_USERNAME = 'arsenharutjunjan'
+    }
     stages {
         stage('Checkout') {
             steps {
