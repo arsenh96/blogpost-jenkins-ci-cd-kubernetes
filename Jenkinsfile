@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                     docker login -u $DOCKER_USERNAME -p $DOCKER_HUB_TOKEN
-                    docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes .
+                    docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes -f HelloWorldWebApp/Dockerfile .
                     docker push $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes:latest
                 '''
             }
