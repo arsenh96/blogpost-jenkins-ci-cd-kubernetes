@@ -148,6 +148,7 @@
   },
   "active": "0751f5bd2579c59e",
   "lastOpenFiles": [
+    "Jenkinsfile",
     "New Text Document.txt",
     "HelloWorldWebApp.Tests/HelloWorldControllerTests.cs",
     "HelloWorldWebApp/HelloWorldController.cs",
@@ -159,7 +160,6 @@
     "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
     "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
     "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-    "HelloWorldWebApp.Tests/bin/Debug/net7.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll",
     "images/jenkins-kubernetes.jpg",
     "images/jenkins-workflow.jpg",
     "mona-lisa.jpg.md",
