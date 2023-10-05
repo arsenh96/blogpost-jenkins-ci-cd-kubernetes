@@ -1,6 +1,7 @@
 
 # De Eerste Stappen naar Geautomatiseerde Deployments: Een Simpele Webapplicatie Uitrollen met Jenkins en Kubernetes (Windows)
-Geschreven door: [Arsen Harutjunjan]
+Geschreven door: Arsen Harutjunjan
+![Arsen Harutjunjan](1693239745445.jpeg)
 # 1. Inleiding
 Dit document is een gids voor studenten en beginnende DevOps-engineers over het opzetten van een geautomatiseerde Continuous Integration (CI) en Continuous Deployment (CD) pipeline met Jenkins en Kubernetes op Windows. We zullen de basisprincipes van CI/CD, de rol van Jenkins en Kubernetes, en de configuratie van een Jenkinsfile bespreken. Daarnaast zullen we praktische stappen geven voor het opzetten van de ontwikkelingsomgeving en het uitvoeren van een Jenkins-pipeline.
 
