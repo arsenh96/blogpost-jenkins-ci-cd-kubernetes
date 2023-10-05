@@ -2,11 +2,11 @@
 
 namespace HelloWorldWebApp
 {
-    [ApiController]
-    public class HelloWorldController
+    [Route("api/[controller]")]
+    public class HelloWorldController : ControllerBase  // Vergeet niet ControllerBase te erven
     {
         [HttpGet]
-        public async Task<string> GetHelloWorld()
+        public string GetHelloWorld()  // async en Task<string> verwijderd
         {
             return "Hello, World!";
         }

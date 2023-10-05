@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿global using Xunit;
 
 namespace HelloWorldWebApp.Tests
 {
     public class HelloWorldControllerTests
     {
         [Fact]
-        public async Task TestControllerReturnValueIsHelloWorld()
+        public void TestControllerReturnValueIsHelloWorld()
         {
             //Arrange
             var controller = new HelloWorldController();
 
             //Act
-            var response = await controller.GetHelloWorld();
+            var response = controller.GetHelloWorld();
 
             //Assert
             Assert.Equal("Hello, World!", response);
