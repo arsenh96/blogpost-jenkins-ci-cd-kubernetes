@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6f3599c9399342a3",
+        "id": "1ee74e7c9ea1f9b4",
         "type": "tabs",
         "children": [
           {
-            "id": "0751f5bd2579c59e",
+            "id": "3f0622bc412738cc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "829f4054fb62feee",
@@ -146,8 +147,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0751f5bd2579c59e",
+  "active": "3f0622bc412738cc",
   "lastOpenFiles": [
+    "images/1693239745445.jpeg",
+    "images/1693239745445.jpeg.crdownload",
+    "jenkins-pipeline.png.md",
+    "README.md",
+    "images/jenkins installation steps/jenkinspipeline.png",
     "HelloWorldWebApp@tmp/durable-4c9e932a/jenkins-result.txt",
     "HelloWorldWebApp@tmp/durable-4c9e932a/jenkins-result.txt.tmp",
     "HelloWorldWebApp@tmp/durable-4c9e932a/jenkins-log.txt",
@@ -157,9 +163,6 @@
     "HelloWorldWebApp@tmp/durable-052b6677/jenkins-result.txt.tmp",
     "HelloWorldWebApp@tmp/durable-052b6677/jenkins-log.txt",
     "HelloWorldWebApp@tmp/durable-052b6677/script.sh",
-    "HelloWorldWebApp@tmp/durable-052b6677",
-    "HelloWorldWebApp@tmp/durable-33b0c557/jenkins-result.txt",
-    "README.md",
     "images/jenkins-kubernetes.jpg",
     "images/jenkins-workflow.jpg",
     "mona-lisa.jpg.md",
