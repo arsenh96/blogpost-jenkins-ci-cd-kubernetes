@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }
-        stage('Docker Build and Push') {
+        /*stage('Docker Build and Push') {
             steps {
  		sh 'pwd'  // Toont de huidige werkdirectory
         	sh 'ls -al'  // Toont alle bestanden in de huidige directory
@@ -27,7 +27,7 @@ pipeline {
                     docker push $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes:latest
                 '''
             }
-        }
+        }*/
         stage('Kubernetes Deployment') {
             steps {
                 sh 'kubectl create -f kubernetes/HelloWorldWebApp.yaml'
