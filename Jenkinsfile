@@ -19,6 +19,8 @@ pipeline {
         }
         stage('Docker Build and Push') {
             steps {
+ 		sh 'pwd'  // Toont de huidige werkdirectory
+        	sh 'ls -al'  // Toont alle bestanden in de huidige directory
                 sh '''
                     echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
                     docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes -f HelloWorldWebApp/Dockerfile .
