@@ -3,30 +3,27 @@
 Geschreven door: Arsen Harutjunjan<br>
 ![Arsen Harutjunjan](images/1693239745445.jpeg)
 # 1. Inleiding
-Dit document is een gids voor studenten en beginnende DevOps-engineers over het opzetten van een geautomatiseerde Continuous Integration (CI) en Continuous Deployment (CD) pipeline met Jenkins en Kubernetes op Windows. We zullen de basisprincipes van CI/CD, de rol van Jenkins en Kubernetes, en de configuratie van een Jenkinsfile bespreken. Daarnaast zullen we praktische stappen geven voor het opzetten van de ontwikkelingsomgeving en het uitvoeren van een Jenkins-pipeline.
+Dit document is een gids voor studenten en beginnende DevOps-engineers over het opzetten van een geautomatiseerde Continuous Integration (CI) en Continuous Deployment (CD) pipeline met Jenkins en Kubernetes op Windows. We zullen de basisprincipes van CI/CD (Fosco, 2022), de rol van Jenkins en Kubernetes, en de configuratie van een Jenkinsfile bespreken. Daarnaast zullen we praktische stappen geven voor het opzetten van de ontwikkelingsomgeving en het uitvoeren van een Jenkins-pipeline.
 
 **Noot aan de lezer/beoordelaar**: Let op dat de code snippets in dit document niet worden meegerekend bij de totale woordentelling. Hierdoor bevindt het totale aantal woorden zich onder de 1580 woorden.
 # 2. Introductie tot Jenkins
-Jenkins is een krachtige open-source automation server die een centrale rol speelt in Continuous Integration (CI) en Continuous Deployment (CD). Hier bespreken we de belangrijkste aspecten van Jenkins en waarom het zo waardevol is voor CI/CD.
+Jenkins (_Jenkins User Documentation_, z.d.) is een krachtige open-source automation server die een centrale rol speelt in Continuous Integration (CI) en Continuous Deployment (CD). Hier bespreken we de belangrijkste aspecten van Jenkins en waarom het zo waardevol is voor CI/CD.
 ## 2.1. Kernfuncties van Jenkins
-Jenkins biedt essentiële functies voor automatisering:
-
-|Voordelen|Nadelen|
-|---|---|
-|Automatisering: Bouwen, testen en deployen van code wordt geautomatiseerd, versnelt ontwikkelingscycli.|Installatie en configuratie kunnen complex zijn.|
-|Plugin-architectuur: Aanpasbaarheid door een breed scala aan plugins voor diverse projectbehoeften.|Overmatig gebruik van plugins kan configuratie verwarrend maken.|
-|Monitoring en feedback: Biedt voortdurende monitoring en real-time feedback voor probleemoplossing.|Kan aanzienlijke systeembronnen vereisen.|
-_Tabel 1: Voor en Nadelen Jenkins_
+Jenkins biedt essentiële functies voor automatisering, een aantal **voordelen zijn (Singh, z.d.): **
+- **Platform-onafhankelijk.** Je kunt Jenkins vinden op verschillende platforms en besturingssystemen zoals Windows, Linux, OS X, enz.
+- **Eenvoudige configuratie.** Je kunt het configureren, wijzigen of uitbreiden. Bovendien zijn code-implementatie en rapportgeneratie snel. Voor continue levering en continue integratie kun je Jenkins configureren volgens je eisen.
+- **Geautomatiseerde integratie.** Dit helpt geld en tijd te besparen in de loop van elk project.
+- **Gemakkelijk detecteerbare fouten.** Dit bespaart je van de noodzaak van grootschalige integraties vol met fouten.
 ## 2.2. Werking van Jenkins
 Jenkins haalt broncode op uit Git, voert builds en tests uit en rapporteert de resultaten aan het team, waardoor snelle feedback en codekwaliteit worden bevorderd.
 ![jenkins-workflow](images/jenkins-workflow.jpg)
-_Figuur 2: Jenkins workflow_
+_Figuur 1: Jenkins workflow_
 ## 2.3. Integratie met Andere tools
 Jenkins integreert naadloos met tools zoals Git voor versiebeheer en Kubernetes voor containerorkestratie, waardoor het een centrale spil wordt in het automatiseren van software delivery.
 
 Dit maakt Jenkins tot een essentieel hulpmiddel voor het stroomlijnen van CI/CD-processen en het versnellen van softwarelevering.
-# 3. Jenkins en Kubernetes: Een Perfecte Match
-Jenkins en Kubernetes vormen een krachtige combinatie die een efficiënte CI/CD-pipeline mogelijk maakt. In dit hoofdstuk zullen we verkennen waarom de integratie van Jenkins, een automatiseringsserver, met Kubernetes, een containerorkestratieplatform, zo waardevol is voor moderne softwareontwikkeling.
+# 3. Jenkins en Kubernetes: Een krachtige combinatie!
+Jenkins en Kubernetes vormen een krachtige combinatie (Team, 2023) die een efficiënte CI/CD-pipeline mogelijk maakt. In dit hoofdstuk zullen we verkennen waarom de integratie van Jenkins, een automatiseringsserver, met Kubernetes, een containerorkestratieplatform, zo waardevol is voor moderne softwareontwikkeling.
 ## 3.1. Waarom de Combinatie?
 De samenvoeging van Jenkins en Kubernetes brengt diverse voordelen met zich mee. Deze combinatie combineert de sterke punten van beide tools:
 - **Efficiëntie**: Jenkins automatiseert build- en testprocessen, terwijl Kubernetes zorgt voor de eenvoudige implementatie van containerized applicaties. Dit verkort de tijd van codeontwikkeling naar productie aanzienlijk.
@@ -34,7 +31,7 @@ De samenvoeging van Jenkins en Kubernetes brengt diverse voordelen met zich mee.
 - **Betrouwbaarheid**: Kubernetes staat bekend om zijn hoge beschikbaarheid en failover-mogelijkheden, essentieel voor robuuste CI/CD-pipelines. Als een pod mislukt, kan Kubernetes automatisch een nieuwe pod maken om de taak over te nemen.
 
 ![Jenkins-Kubernetes-Integratie](images/jenkins-kubernetes.jpg)
-_Figuur 3: Jenkins-Kubernetes-Integratie_
+_Figuur 2: Jenkins-Kubernetes-Integratie_
 ## 3.2. De Integratie in de Praktijk
 Jenkins kan op verschillende manieren worden geïntegreerd met Kubernetes, afhankelijk van de specifieke behoeften van het project. Een veelgebruikte methode is het configureren van Jenkins-pipelines die draaien als pods in een Kubernetes-cluster. Hierdoor kunnen Jenkins-jobs eenvoudig worden geschaald en profiteren van de veerkracht van Kubernetes.
 ## 3.3. Benutten van de voordelen
@@ -59,14 +56,10 @@ Om externe toegang tot je lokale Jenkins-server mogelijk te maken, kun je ngrok 
 3. Gebruik de door ngrok verstrekte URL om externe toegang tot je Jenkins-server te krijgen. Houd er rekening mee dat ngrok-URL's tijdelijk zijn en bij elke sessie veranderen.
 ## 4.2. Kubernetes opzetten met Docker Desktop
 Kubernetes is het orkestratieplatform dat we gaan gebruiken. We zullen Docker Desktop gebruiken om Kubernetes in te schakelen:
-### 4.2.1. Docker Desktop installeren
-- Download en installeer Docker Desktop van de [officiële website](https://docs.docker.com/desktop/install/windows-install/).
-### 4.2.2. Kubernetes inschakelen
-- Ga naar de Docker Desktop-instellingen en schakel Kubernetes in.
-#### 4.2.2.1. Installatie verifiëren
-Om te controleren of Kubernetes correct is geïnstalleerd, gebruik je het volgende commando in de terminal: `kubectl cluster-info`.
-### 4.2.3. Integratie met Jenkins
-In een later hoofdstuk gaan we dieper in op de integratie tussen Jenkins en Kubernetes.
+- **Stap 1, Docker Desktop installeren:** Download en installeer Docker Desktop van de [officiële website](https://docs.docker.com/desktop/install/windows-install/).
+- **Stap 2, Kubernetes inschakelen:** Ga naar de Docker Desktop-instellingen en schakel Kubernetes in.
+- **Stap 3 Installatie verifiëren: **Om te controleren of Kubernetes correct is geïnstalleerd, gebruik je het volgende commando in de terminal: `kubectl cluster-info`.
+- **Stap 4 Integratie met Jenkins:** een later hoofdstuk gaan we dieper in op de integratie tussen Jenkins en Kubernetes.
 # 5. Bouwen van een Jenkinsfile: De fundamenten
 Een diepgaand begrip van Jenkinsfiles en hoe ze worden geïmplementeerd, is essentieel voor een effectieve CI/CD-pipeline. In dit hoofdstuk zullen we de basiscomponenten van een Jenkinsfile verkennen en demonstreren hoe deze kunnen worden gebruikt om een solide CI/CD-pipeline te creëren, specifiek gericht op studenten en beginnende DevOps-engineers.
 ## 5.1 Environment: Het Definiëren van Omgevingsvariabelen
@@ -79,20 +72,23 @@ environment {
 }
 ```
 Houd er rekening mee dat het beheren van gevoelige informatie zoals gebruikersnamen en wachtwoorden op een veilige manier een best practice is, maar voor deze tutorial houden we het eenvoudig.
-## 5.2. Agens in een Jenkinsfile
-Het `agent` blok specificeert waar de build wordt uitgevoerd. `agent any` geeft aan dat de build kan worden uitgevoerd op elke beschikbare agent. Voor meer complexe scenario's kun je specifieke criteria toepassen om een geschikte agent te selecteren.
+## 5.2. Agents in een Jenkinsfile
+Een "agent" in Jenkins is een computer waarop Jenkins taken uitvoert. Het `agent` blok in een Jenkinsfile bepaalt waar de build plaatsvindt.
 ```
 agent any
 ```
 ## 5.3. Stages in een Jenkinsfile
 Een Jenkinsfile is opgebouwd uit "stages," die afzonderlijke fasen van je CI/CD-pipeline vertegenwoordigen en elke fase definieert een specifieke taak:
-- **Checkout**: Haalt de broncode op.
+**Standaard stages: **
+- **Checkout:** Haalt de broncode op.
+- **Build :** Compileert en bouwt de code.
 - **Test**: Voert tests uit op de code.
-- **Docker Build and Push**: Bouwt een Docker-image en publiceert deze.
+**Door mij aangemaakt:**
+- **Docker Build and Push**: Bouwt een Docker-image en publiceert deze (Vervangt de Build stage).
 - **Kubernetes Deployment**: Deployt de applicatie naar een Kubernetes-cluster.
 - **Verify Deployment**: Controleert of de implementatie succesvol is.
 ![jenkins-pipeline](images/jenkins%20installation%20steps/jenkinspipeline.png)
-_Figuur 4: Jenkins pipeline_
+_Figuur 3: Jenkins pipeline_
 
 # 6. Implementatie van de Jenkinsfile
 In dit hoofdstuk gaan we dieper in op de configuratie en uitvoering van de Jenkinsfile die we hebben opgezet voor ons project. We zullen de stappen doorlopen om de Jenkins-pipeline handmatig uit te voeren en het resultaat te bekijken.
@@ -175,6 +171,8 @@ We moedigen verdere exploratie en praktijk aan om DevOps-vaardigheden verder te 
 Blijf leren en experimenteren om jouw expertise te vergroten. Succes met jouw CI/CD-reis!
 # 8. Bronnenlijst
 
-Anastasov, M. (2021, 24 november). _Continuous Integration (CI) explained - Semaphore_. Semaphore. https://semaphoreci.com/continuous-integration
-
+- Team, C. O. (2023). Running Jenkins on Kubernetes: Pros/Cons and a quick tutorial. _Codefresh_. https://codefresh.io/learn/jenkins/running-jenkins-on-kubernetes-pros-cons-and-a-quick-tutorial/#:~:text=With%20Jenkins%20on%20Kubernetes%2C%20developers,CD)%20workflows%20for%20containerized%20applications.
+- Singh, D. P. (z.d.). What is Jenkins? how it works, top features, pros and cons. _Hackr.io_. https://hackr.io/blog/what-is-jenkins
+- Fosco, M. (2022). What is a CI/CD pipeline? _CircleCI_. https://circleci.com/blog/what-is-a-ci-cd-pipeline/?utm_content=
+- _Jenkins User Documentation_. (z.d.). Jenkins User Documentation. https://www.jenkins.io/doc/
 
