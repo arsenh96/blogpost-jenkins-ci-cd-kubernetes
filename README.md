@@ -19,7 +19,7 @@ Jenkins biedt essentiële functies voor automatisering:
 _Tabel 1: Voor en Nadelen Jenkins_
 ## 2.2. Werking van Jenkins
 Jenkins haalt broncode op uit Git, voert builds en tests uit en rapporteert de resultaten aan het team, waardoor snelle feedback en codekwaliteit worden bevorderd.
-![jenkins-workflow](images\jenkins-workflow.jpg)
+![jenkins-workflow](images/jenkins-workflow.jpg)
 _Figuur 2: Jenkins workflow_
 ## 2.3. Integratie met Andere tools
 Jenkins integreert naadloos met tools zoals Git voor versiebeheer en Kubernetes voor containerorkestratie, waardoor het een centrale spil wordt in het automatiseren van software delivery.
