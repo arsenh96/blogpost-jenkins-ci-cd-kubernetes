@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-webapp
+  labels:
+    app: helloworld-webapp
+spec:
+  replicas: 3  # Het aantal gewenste replica's
+  selector:
+    matchLabels:
+      app: helloworld-webapp
+  template:
+    metadata:
+      labels:
+        app: helloworld-webapp
+    spec:
+      containers:
+      - name: helloworld-webapp
+        image: arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes:latest  # De Docker-image die je wilt implementeren
+        ports:
+        - containerPort: 80  # De poort waarop de applicatie binnen de container draait

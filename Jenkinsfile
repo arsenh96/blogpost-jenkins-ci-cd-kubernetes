@@ -28,10 +28,9 @@ pipeline {
                 '''
             }
         }
-        /*
         stage('Kubernetes Deployment') {
             steps {
-                sh 'kubectl create -f myapp-deployment.yaml'
+                sh 'kubectl create -f kubernetes/HelloWorldWebApp.yaml'
             }
         }
         stage('Verify Deployment') {
@@ -39,6 +38,5 @@ pipeline {
                 sh 'kubectl get deployments'
             }
         }
-        */
     }
 }
