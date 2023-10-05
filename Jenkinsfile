@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_USERNAME = 'arsenharutjunjan'
         DOCKER_PASSWORD = 'Password123!'
-        KUBECONFIG = 'C:\\Users\\arsen\\.kube\\config' // Toegevoegde regel voor kubectl authenticatie
+        KUBECONFIG = 'C:\\Users\\arsen\\.kube\\config' 
     }
     stages {
         stage('Checkout') {
@@ -18,8 +18,7 @@ pipeline {
                 }
             }
         }
-        // Onderstaande code is uitgeschakeld, zoals je hebt aangegeven met /*...*/
-        /*stage('Docker Build and Push') {
+        stage('Docker Build and Push') {
             steps {
                 sh 'pwd'
                 sh 'ls -al'
@@ -29,22 +28,22 @@ pipeline {
                     docker push $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes:latest
                 '''
             }
-        }*/
+        }
         stage('Kubernetes Deployment') {
             steps {
                 script {
                     try {
-                        bat 'kubectl apply -f kubernetes/HelloWorldWebApp.yaml' // Gebruik bat in plaats van sh op Windows
+                        bat 'kubectl apply -f kubernetes/HelloWorldWebApp.yaml' 
                     } catch (err) {
                         echo "Failed to apply kubernetes/HelloWorldWebApp.yaml: ${err}"
-                        bat 'kubectl get all' // Gebruik bat in plaats van sh op Windows
+                        bat 'kubectl get all' 
                     }
                 }
             }
         }
         stage('Verify Deployment') {
             steps {
-                bat 'kubectl get deployments' // Gebruik bat in plaats van sh op Windows
+                bat 'kubectl get deployments' 
             }
         }
     }
