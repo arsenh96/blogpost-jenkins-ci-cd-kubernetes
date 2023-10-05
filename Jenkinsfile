@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKER_USERNAME = 'arsenharutjunjan'
         DOCKER_PASSWORD = 'Password123!'
+        KUBECONFIG = 'C:\\Users\\arsen\\.kube\\config' // Toegevoegde regel voor kubectl authenticatie
     }
     stages {
         stage('Checkout') {
@@ -12,15 +13,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                dir('HelloWorldWebApp.Tests') { // Navigeer naar de submap
-                    bat 'dotnet test' // Voer de tests uit
+                dir('HelloWorldWebApp.Tests') {
+                    bat 'dotnet test'
                 }
             }
         }
+        // Onderstaande code is uitgeschakeld, zoals je hebt aangegeven met /*...*/
         /*stage('Docker Build and Push') {
             steps {
- 		sh 'pwd'  // Toont de huidige werkdirectory
-        	sh 'ls -al'  // Toont alle bestanden in de huidige directory
+                sh 'pwd'
+                sh 'ls -al'
                 sh '''
                     echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
                     docker build -t $DOCKER_USERNAME/blogpost-jenkins-ci-cd-kubernetes -f HelloWorldWebApp/Dockerfile .
@@ -32,19 +34,18 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'kubectl apply -f kubernetes/HelloWorldWebApp.yaml'
+                        bat 'kubectl apply -f kubernetes/HelloWorldWebApp.yaml' // Gebruik bat in plaats van sh op Windows
                     } catch (err) {
                         echo "Failed to apply kubernetes/HelloWorldWebApp.yaml: ${err}"
-                        sh 'kubectl get all'
+                        bat 'kubectl get all' // Gebruik bat in plaats van sh op Windows
                     }
                 }
             }
         }
         stage('Verify Deployment') {
             steps {
-                sh 'kubectl get deployments'
+                bat 'kubectl get deployments' // Gebruik bat in plaats van sh op Windows
             }
         }
     }
 }
-
