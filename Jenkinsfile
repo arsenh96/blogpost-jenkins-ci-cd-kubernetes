@@ -30,7 +30,14 @@ pipeline {
         }*/
         stage('Kubernetes Deployment') {
             steps {
-                sh 'kubectl create -f kubernetes/HelloWorldWebApp.yaml'
+                script {
+                    try {
+                        sh 'kubectl apply -f kubernetes/HelloWorldWebApp.yaml'
+                    } catch (err) {
+                        echo "Failed to apply kubernetes/HelloWorldWebApp.yaml: ${err}"
+                        sh 'kubectl get all'
+                    }
+                }
             }
         }
         stage('Verify Deployment') {
@@ -40,3 +47,4 @@ pipeline {
         }
     }
 }
+
