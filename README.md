@@ -1,7 +1,7 @@
 
 # De Eerste Stappen naar Geautomatiseerde Deployments: Een Simpele Webapplicatie Uitrollen met Jenkins en Kubernetes (Windows)
-Geschreven door: Arsen Harutjunjan
-![Arsen Harutjunjan](1693239745445.jpeg)
+Geschreven door: Arsen Harutjunjan<br>
+![Arsen Harutjunjan](images/1693239745445.jpeg)
 # 1. Inleiding
 Dit document is een gids voor studenten en beginnende DevOps-engineers over het opzetten van een geautomatiseerde Continuous Integration (CI) en Continuous Deployment (CD) pipeline met Jenkins en Kubernetes op Windows. We zullen de basisprincipes van CI/CD, de rol van Jenkins en Kubernetes, en de configuratie van een Jenkinsfile bespreken. Daarnaast zullen we praktische stappen geven voor het opzetten van de ontwikkelingsomgeving en het uitvoeren van een Jenkins-pipeline.
 
@@ -19,8 +19,8 @@ Jenkins biedt essentiële functies voor automatisering:
 _Tabel 1: Voor en Nadelen Jenkins_
 ## 2.2. Werking van Jenkins
 Jenkins haalt broncode op uit Git, voert builds en tests uit en rapporteert de resultaten aan het team, waardoor snelle feedback en codekwaliteit worden bevorderd.
-![jenkins-workflow](jenkins-workflow.jpg)
-_Figuur 3: Jenkins workflow_
+![jenkins-workflow](images\jenkins-workflow.jpg)
+_Figuur 2: Jenkins workflow_
 ## 2.3. Integratie met Andere tools
 Jenkins integreert naadloos met tools zoals Git voor versiebeheer en Kubernetes voor containerorkestratie, waardoor het een centrale spil wordt in het automatiseren van software delivery.
 
@@ -33,8 +33,8 @@ De samenvoeging van Jenkins en Kubernetes brengt diverse voordelen met zich mee.
 - **Schaalbaarheid**: Kubernetes biedt de mogelijkheid om snel en eenvoudig op te schalen, wat ideaal is voor grotere codebases en teams. Jenkins-pipelines kunnen parallel worden uitgevoerd op verschillende pods in het Kubernetes-cluster, waardoor schaalbaarheid wordt benut.
 - **Betrouwbaarheid**: Kubernetes staat bekend om zijn hoge beschikbaarheid en failover-mogelijkheden, essentieel voor robuuste CI/CD-pipelines. Als een pod mislukt, kan Kubernetes automatisch een nieuwe pod maken om de taak over te nemen.
 
-![Jenkins-Kubernetes-Integratie](jenkins-kubernetes.jpg)
-_Figuur 4: Jenkins-Kubernetes-Integratie_
+![Jenkins-Kubernetes-Integratie](images\jenkins-kubernetes.jpg)
+_Figuur 3: Jenkins-Kubernetes-Integratie_
 ## 3.2. De Integratie in de Praktijk
 Jenkins kan op verschillende manieren worden geïntegreerd met Kubernetes, afhankelijk van de specifieke behoeften van het project. Een veelgebruikte methode is het configureren van Jenkins-pipelines die draaien als pods in een Kubernetes-cluster. Hierdoor kunnen Jenkins-jobs eenvoudig worden geschaald en profiteren van de veerkracht van Kubernetes.
 ## 3.3. Benutten van de voordelen
@@ -91,7 +91,7 @@ Een Jenkinsfile is opgebouwd uit "stages," die afzonderlijke fasen van je CI/CD-
 - **Docker Build and Push**: Bouwt een Docker-image en publiceert deze.
 - **Kubernetes Deployment**: Deployt de applicatie naar een Kubernetes-cluster.
 - **Verify Deployment**: Controleert of de implementatie succesvol is.
-![jenkins-pipeline](jenkinspipeline.png)
+![jenkins-pipeline](images/jenkins%20installation%20steps/jenkinspipeline.png)
 _Figuur 4: Jenkins pipeline_
 
 # 6. Implementatie van de Jenkinsfile
