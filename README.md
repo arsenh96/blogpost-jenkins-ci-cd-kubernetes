@@ -33,7 +33,7 @@ De samenvoeging van Jenkins en Kubernetes brengt diverse voordelen met zich mee.
 - **Schaalbaarheid**: Kubernetes biedt de mogelijkheid om snel en eenvoudig op te schalen, wat ideaal is voor grotere codebases en teams. Jenkins-pipelines kunnen parallel worden uitgevoerd op verschillende pods in het Kubernetes-cluster, waardoor schaalbaarheid wordt benut.
 - **Betrouwbaarheid**: Kubernetes staat bekend om zijn hoge beschikbaarheid en failover-mogelijkheden, essentieel voor robuuste CI/CD-pipelines. Als een pod mislukt, kan Kubernetes automatisch een nieuwe pod maken om de taak over te nemen.
 
-![Jenkins-Kubernetes-Integratie](images\jenkins-kubernetes.jpg)
+![Jenkins-Kubernetes-Integratie](images/jenkins-kubernetes.jpg)
 _Figuur 3: Jenkins-Kubernetes-Integratie_
 ## 3.2. De Integratie in de Praktijk
 Jenkins kan op verschillende manieren worden geïntegreerd met Kubernetes, afhankelijk van de specifieke behoeften van het project. Een veelgebruikte methode is het configureren van Jenkins-pipelines die draaien als pods in een Kubernetes-cluster. Hierdoor kunnen Jenkins-jobs eenvoudig worden geschaald en profiteren van de veerkracht van Kubernetes.
