@@ -24,6 +24,8 @@
 
 # See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -35,11 +37,17 @@ WORKDIR /src
 # Debug: toon de inhoud van de huidige directory
 RUN ls -al
 
-COPY "HelloWorldWebApp.csproj" .
+# Ga naar de HelloWorldWebApp map en kopieer en herstel het .csproj bestand
+WORKDIR "/src/HelloWorldWebApp"
+COPY "HelloWorldWebApp/HelloWorldWebApp.csproj" .
 RUN dotnet restore "HelloWorldWebApp.csproj"
 
+# Terug naar de /src directory en kopieer alle andere bestanden
+WORKDIR "/src"
 COPY . .
-WORKDIR "/src/"
+
+# Bouw het project
+WORKDIR "/src/HelloWorldWebApp"
 RUN dotnet build "HelloWorldWebApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
