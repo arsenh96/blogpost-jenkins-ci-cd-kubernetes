@@ -9,7 +9,7 @@ Dit document is een gids voor studenten en beginnende DevOps-engineers over het 
 # 2. Introductie tot Jenkins
 Jenkins (_Jenkins User Documentation_, z.d.) is een krachtige open-source automation server die een centrale rol speelt in Continuous Integration (CI) en Continuous Deployment (CD). Hier bespreken we de belangrijkste aspecten van Jenkins en waarom het zo waardevol is voor CI/CD.
 ## 2.1. Kernfuncties van Jenkins
-Jenkins biedt essentiële functies voor automatisering, een aantal **voordelen zijn (Singh, z.d.): **
+Jenkins biedt essentiële functies voor automatisering, een aantal **voordelen zijn (Singh, z.d.):**
 - **Platform-onafhankelijk.** Je kunt Jenkins vinden op verschillende platforms en besturingssystemen zoals Windows, Linux, OS X, enz.
 - **Eenvoudige configuratie.** Je kunt het configureren, wijzigen of uitbreiden. Bovendien zijn code-implementatie en rapportgeneratie snel. Voor continue levering en continue integratie kun je Jenkins configureren volgens je eisen.
 - **Geautomatiseerde integratie.** Dit helpt geld en tijd te besparen in de loop van elk project.
