@@ -175,4 +175,4 @@ Blijf leren en experimenteren om jouw expertise te vergroten. Succes met jouw CI
 - Singh, D. P. (z.d.). What is Jenkins? how it works, top features, pros and cons. _Hackr.io_. https://hackr.io/blog/what-is-jenkins
 - Fosco, M. (2022). What is a CI/CD pipeline? _CircleCI_. https://circleci.com/blog/what-is-a-ci-cd-pipeline/?utm_content=
 - _Jenkins User Documentation_. (z.d.). Jenkins User Documentation. https://www.jenkins.io/doc/
-_Learn Kubernetes basics_. (z.d.). Kubernetes. https://kubernetes.io/docs/tutorials/kubernetes-basics/
+- _Learn Kubernetes basics_. (z.d.). Kubernetes. https://kubernetes.io/docs/tutorials/kubernetes-basics/
