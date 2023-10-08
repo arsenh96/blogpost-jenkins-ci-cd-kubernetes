@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldwebapp-deployment
+  labels:
+    app: helloworldwebapp
+spec:
+  replicas: 2  
+  selector:
+    matchLabels:
+      app: helloworldwebapp
+  template:
+    metadata:
+      labels:
+        app: helloworldwebapp
+    spec:
+      containers:
+      - name: helloworldwebapp
+        image: arsenharutjunjan/blogpost-jenkins-ci-cd-kubernetes:latest  
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworldwebapp-service
+spec:
+  selector:
+    app: helloworldwebapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+    - protocol: TCP
+      port: 443
+      targetPort: 443
+  type: LoadBalancer  

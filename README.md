@@ -23,7 +23,7 @@ Jenkins integreert naadloos met tools zoals Git voor versiebeheer en Kubernetes 
 
 Dit maakt Jenkins tot een essentieel hulpmiddel voor het stroomlijnen van CI/CD-processen en het versnellen van softwarelevering.
 # 3. Jenkins en Kubernetes: Een krachtige combinatie!
-Jenkins en Kubernetes vormen een krachtige combinatie (Team, 2023) die een efficiënte CI/CD-pipeline mogelijk maakt. In dit hoofdstuk zullen we verkennen waarom de integratie van Jenkins, een automatiseringsserver, met Kubernetes, een containerorkestratieplatform, zo waardevol is voor moderne softwareontwikkeling.
+Jenkins en Kubernetes (_Learn Kubernetes basics_, z.d.) vormen een krachtige combinatie (Team, 2023) die een efficiënte CI/CD-pipeline mogelijk maakt. In dit hoofdstuk zullen we verkennen waarom de integratie van Jenkins, een automatiseringsserver, met Kubernetes, een containerorkestratieplatform, zo waardevol is voor moderne softwareontwikkeling.
 ## 3.1. Waarom de Combinatie?
 De samenvoeging van Jenkins en Kubernetes brengt diverse voordelen met zich mee. Deze combinatie combineert de sterke punten van beide tools:
 - **Efficiëntie**: Jenkins automatiseert build- en testprocessen, terwijl Kubernetes zorgt voor de eenvoudige implementatie van containerized applicaties. Dit verkort de tijd van codeontwikkeling naar productie aanzienlijk.
@@ -175,4 +175,4 @@ Blijf leren en experimenteren om jouw expertise te vergroten. Succes met jouw CI
 - Singh, D. P. (z.d.). What is Jenkins? how it works, top features, pros and cons. _Hackr.io_. https://hackr.io/blog/what-is-jenkins
 - Fosco, M. (2022). What is a CI/CD pipeline? _CircleCI_. https://circleci.com/blog/what-is-a-ci-cd-pipeline/?utm_content=
 - _Jenkins User Documentation_. (z.d.). Jenkins User Documentation. https://www.jenkins.io/doc/
-
+_Learn Kubernetes basics_. (z.d.). Kubernetes. https://kubernetes.io/docs/tutorials/kubernetes-basics/
